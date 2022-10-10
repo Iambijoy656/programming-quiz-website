@@ -8,7 +8,7 @@ export const QuizContext = createContext([]);
 
 const Main = () => {
     const topics = useLoaderData().data;
-    console.log(topics)
+    // console.log(topics)
 
     return (
         <div>

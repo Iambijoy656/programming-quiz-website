@@ -7,11 +7,15 @@ import Topic from "./Topic";
 const Home = () => {
   const topics = useContext(QuizContext);
 
+  const handleQuizTopic = (topic) => {
+    console.log(topic)
+  }
+
   return (
     <section>
       <div className="  bg-[url('https://elearningwp.thimpress.com/demo-04/wp-content/uploads/sites/10/2017/06/home05-sldier.jpg')]">
         <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-white">
-          <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-amber-100">
+          <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-orange-400">
             We Organize Effective Learning
           </h1>
           <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-white">
@@ -22,7 +26,7 @@ const Home = () => {
             <Link to="/about">
               <button
                 type="button"
-                className="px-8 py-3 m-2 text-lg border rounded-full border-cyan-400 text-gray-900 hover:bg-orange-400"
+                className="px-8 py-3 m-2 text-lg border rounded-full border-cyan-400 text-gray-900 hover:bg-orange-300"
               >
                 Learn more
               </button>
@@ -41,7 +45,11 @@ const Home = () => {
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
 
             {
-              topics.map(topic => <Topic key={topic.id} topic={topic}></Topic>)
+              topics.map(topic => <Topic
+                key={topic.id}
+                topic={topic}
+                handleQuizTopic={handleQuizTopic}
+              ></Topic>)
             }
 
 
