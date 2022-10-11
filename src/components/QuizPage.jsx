@@ -19,6 +19,7 @@ const QuizPage = () => {
                     key={questionObj.id}
                     questionObj={questionObj}
 
+
                 >
 
                 </Quiz>)
