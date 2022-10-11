@@ -4,7 +4,7 @@ import Option from './Option';
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { toast } from 'react-toastify'
 
-const Quiz = ({ questionObj }) => {
+const Quiz = ({ questionObj, questions }) => {
     // console.log(questionObj)
     const { question, options, correctAnswer } = questionObj
 
@@ -54,7 +54,7 @@ const Quiz = ({ questionObj }) => {
             <div className="bg-white text-gray-100 rounded-lg shadow-lg my-4">
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-md">
                     <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-400"> 1 </span>
+                        <span className="text-sm text-gray-400"> ## </span>
                         <button onClick={seeCoreectAns} rel="noopener noreferrer" className="px-2 py-1 font-bold rounded"><EyeIcon className="h-6 w-6 text-blue-500"></EyeIcon></button>
                     </div>
                     <div className="mt-3">

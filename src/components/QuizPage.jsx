@@ -4,7 +4,7 @@ import Quiz from './Quiz';
 
 const QuizPage = () => {
     const quizData = useLoaderData().data;
-    // console.log(quizData)
+    console.log(quizData)
     const { name, questions, id } = quizData
 
 
@@ -18,6 +18,7 @@ const QuizPage = () => {
                 questions.map(questionObj => <Quiz
                     key={questionObj.id}
                     questionObj={questionObj}
+                    questions={questions}
 
 
                 >
