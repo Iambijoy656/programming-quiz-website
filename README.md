@@ -1,4 +1,4 @@
-## Quiz Repository
+## Programing Quiz website
 
 We Organize Effective Learning
 
@@ -18,5 +18,4 @@ Tailwind Components ->
 [Mamba UI](https://www.mambaui.com/)
 [Kitwind](https://kitwind.io/products/kometa/components)
 
-## Other Resources
-Icon -> [FlatIcon](https://www.flaticon.com/)
+

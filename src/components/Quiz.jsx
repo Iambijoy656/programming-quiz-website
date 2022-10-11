@@ -10,7 +10,7 @@ const Quiz = ({ questionObj, questions }) => {
 
 
 
-    const [ans, setAns] = useState({ correct: 0, worng: 0 })
+    const { ans, setAns } = useState({ correct: 0, wrong: 0 })
     const [select, setselect] = useState([]);
 
     const seeCoreectAns = () => {
@@ -33,18 +33,20 @@ const Quiz = ({ questionObj, questions }) => {
             setselect(newselect)
             if (option === correctAnswer) {
                 toast.success('Correct Answer!', { autoClose: 500 })
+                setAns({ ...ans, corrct: ans.wrong + 1 })
 
 
             }
             else {
 
-                // const corrctAns = questionObj.correctAnswer;
+
                 toast.error('Wrong Answer!', { autoClose: 500 })
-                // toast.warning(`Coreect Answer is: ${corrctAns}`, { autoClose: 5000 })
+                setAns({ ...ans, corrct: ans.corrct + 1 })
 
             }
         }
 
+        console.log(ans.corrct)
     }
 
 
@@ -58,7 +60,7 @@ const Quiz = ({ questionObj, questions }) => {
                         <button onClick={seeCoreectAns} rel="noopener noreferrer" className="px-2 py-1 font-bold rounded"><EyeIcon className="h-6 w-6 text-blue-500"></EyeIcon></button>
                     </div>
                     <div className="mt-3">
-                        <Link rel="noopener noreferrer" to="#" className="text-2xl font-bold hover:underline text-blue-500">{question.split(<p />)}</Link>
+                        <Link rel="noopener noreferrer" to="#" className="text-2xl font-bold hover:underline text-blue-500">{question.slice(3, -4)}</Link>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                             {
