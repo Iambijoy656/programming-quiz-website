@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 export const QuizContext = createContext([]);
+export const QuizValidationContext = createContext([])
 
 
 const Main = () => {
@@ -13,9 +14,11 @@ const Main = () => {
     return (
         <div>
             <QuizContext.Provider value={topics}>
-                <Header></Header>
-                <Outlet></Outlet>
-                <Footer></Footer>
+                <QuizValidationContext.Provider value={[]}>
+                    <Header></Header>
+                    <Outlet></Outlet>
+                    <Footer></Footer>
+                </QuizValidationContext.Provider>
             </QuizContext.Provider>
         </div>
     );

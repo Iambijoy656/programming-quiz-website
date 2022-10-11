@@ -7,9 +7,7 @@ import Topic from "./Topic";
 const Home = () => {
   const topics = useContext(QuizContext);
 
-  const handleQuizTopic = (topic) => {
-    console.log(topic)
-  }
+
 
   return (
     <section>
@@ -48,7 +46,7 @@ const Home = () => {
               topics.map(topic => <Topic
                 key={topic.id}
                 topic={topic}
-                handleQuizTopic={handleQuizTopic}
+
               ></Topic>)
             }
 
