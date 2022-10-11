@@ -4,7 +4,7 @@ We Organize Effective Learning
 
 
 ## Live Link
-Hosted in Netlify -> [Smart Home](https://shome-shop.netlify.app/)
+Hosted in Netlify -> [Programing Quiz](https://quiz-website-pika-b16f2f.netlify.app/)
 
 ## Context API
 
