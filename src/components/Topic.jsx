@@ -3,7 +3,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom';
 
 const Topic = ({ topic }) => {
-    const { id, name, logo } = topic
+
+    const { id, name, logo, total } = topic
     return (
         <article className="flex flex-col bg-gray-100 p-5 rounded-md">
             <Link rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
@@ -19,7 +20,7 @@ const Topic = ({ topic }) => {
                         <button className='flex justify-center items-center gap-2 text-xl bg-blue-500 text-white py-1 px-3 rounded-lg '>Start Quiz <ArrowRightIcon className="h-3 w-3 text-white"></ArrowRightIcon></button>
                     </Link>
 
-                    <span>2.4K views</span>
+                    <span className='text-sm text-gray-600'>{total} Question</span>
                 </div>
             </div>
         </article>
