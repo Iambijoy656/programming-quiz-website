@@ -9,7 +9,6 @@ const Quiz = ({ questionObj, questions }) => {
     const { question, options, correctAnswer } = questionObj
 
 
-
     const { ans, setAns } = useState({ correct: 0, wrong: 0 })
     const [select, setselect] = useState([]);
 
@@ -25,7 +24,7 @@ const Quiz = ({ questionObj, questions }) => {
         const exists = select.find(selected => selected.id === questionObj.id);
 
         if (exists) {
-            alert('already selected');
+            alert("already selected this question's Option");
 
         } else {
 
@@ -33,7 +32,8 @@ const Quiz = ({ questionObj, questions }) => {
             setselect(newselect)
             if (option === correctAnswer) {
                 toast.success('Correct Answer!', { autoClose: 500 })
-                setAns({ ...ans, corrct: ans.wrong + 1 })
+                // setAns({ ...ans, corrct: ans.corr + 1 })
+                // console.log(ans)
 
 
             }
@@ -41,12 +41,13 @@ const Quiz = ({ questionObj, questions }) => {
 
 
                 toast.error('Wrong Answer!', { autoClose: 500 })
-                setAns({ ...ans, corrct: ans.corrct + 1 })
+                // setAns({ ...ans, corrct: ans.wrong + 1 })
+
 
             }
         }
 
-        console.log(ans.corrct)
+
     }
 
 

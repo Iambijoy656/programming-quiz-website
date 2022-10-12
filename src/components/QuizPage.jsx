@@ -6,7 +6,7 @@ const QuizPage = () => {
     const quizData = useLoaderData().data;
     // console.log(quizData)
     const { name, questions, id } = quizData
-    console.log(questions)
+    // console.log(questions)
 
 
 
