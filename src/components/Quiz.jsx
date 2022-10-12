@@ -6,12 +6,13 @@ import { toast } from 'react-toastify'
 
 const Quiz = ({ questionObj, correctAns, setCorrectAns, wrongAns, setWrongAns }) => {
     // console.log(questionObj)
+
+
+
     const { question, options, correctAnswer } = questionObj
-
-
     const [select, setselect] = useState([]);
 
-    const [check, setCheck] = useState(false);
+
 
     const seeCoreectAns = () => {
         const corrctAns = questionObj.correctAnswer;
@@ -24,7 +25,7 @@ const Quiz = ({ questionObj, correctAns, setCorrectAns, wrongAns, setWrongAns })
         // console.log(questionObj)
         const exists = select.find(selected => selected.id === questionObj.id);
 
-        setCheck(!check)
+
 
         if (exists) {
             alert("already selected this question's Option");
@@ -71,7 +72,7 @@ const Quiz = ({ questionObj, correctAns, setCorrectAns, wrongAns, setWrongAns })
                                     questionObj={questionObj}
                                     handleAnswer={handleAnswer}
                                     correctAnswer={correctAnswer}
-                                    check={check}
+
                                 ></Option>)
                             }
                         </div>
