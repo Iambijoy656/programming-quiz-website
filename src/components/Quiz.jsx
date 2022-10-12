@@ -4,12 +4,13 @@ import Option from './Option';
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { toast } from 'react-toastify'
 
-const Quiz = ({ questionObj, questions }) => {
+const Quiz = ({ questionObj, correctAns, setCorrectAns, wrongAns, setWrongAns }) => {
     // console.log(questionObj)
     const { question, options, correctAnswer } = questionObj
 
 
-    const { ans, setAns } = useState({ correct: 0, wrong: 0 })
+
+
     const [select, setselect] = useState([]);
 
     const seeCoreectAns = () => {
@@ -32,8 +33,9 @@ const Quiz = ({ questionObj, questions }) => {
             setselect(newselect)
             if (option === correctAnswer) {
                 toast.success('Correct Answer!', { autoClose: 500 })
-                // setAns({ ...ans, corrct: ans.corr + 1 })
-                // console.log(ans)
+                setCorrectAns(correctAns + 1)
+
+
 
 
             }
@@ -41,7 +43,7 @@ const Quiz = ({ questionObj, questions }) => {
 
 
                 toast.error('Wrong Answer!', { autoClose: 500 })
-                // setAns({ ...ans, corrct: ans.wrong + 1 })
+                setWrongAns(wrongAns + 1)
 
 
             }
@@ -70,6 +72,7 @@ const Quiz = ({ questionObj, questions }) => {
                                     option={option}
                                     questionObj={questionObj}
                                     handleAnswer={handleAnswer}
+                                    correctAnswer={correctAnswer}
                                 ></Option>)
                             }
                         </div>
